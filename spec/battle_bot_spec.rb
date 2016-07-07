@@ -504,6 +504,47 @@ describe BattleBot do
 
 
   # ------------------------------------
+<<<<<<< HEAD
+=======
+  # #has_weapon?
+  # ------------------------------------
+
+
+  describe '#has_weapon?' do
+
+    it 'returns true when the bot has a weapon' do
+      bot.pick_up(light_saber)
+      expect(bot.has_weapon?).to eq(true)
+    end
+
+
+    it 'returns false when the bot does not have a weapon' do
+      expect(bot.has_weapon?).to eq(false)
+    end
+  end
+
+
+  # ------------------------------------
+  # #dead?
+  # ------------------------------------  
+
+
+  describe '#dead?' do
+
+    it "returns true when the bot's health is 0" do
+      bot.take_damage(1000)
+      expect(bot.dead?).to eq(true)
+    end
+
+
+    it "returns false when the bot's health is greater than 0" do
+      expect(bot.dead?).to eq(false)
+    end
+  end
+
+
+  # ------------------------------------
+>>>>>>> 9bd8dff35330bb471ef5a01d8fca50aaa828fb24
   # BattleBot#count
   # ------------------------------------  
 
@@ -516,6 +557,13 @@ describe BattleBot do
       bots
     end
 
+<<<<<<< HEAD
+=======
+    it 'returns the number of currently instantiated alive bots' do
+      expect(BattleBot.count).to eq(2)
+    end
+
+>>>>>>> 9bd8dff35330bb471ef5a01d8fca50aaa828fb24
 
     it 'is incremented when a new bot is instantiated' do
       expect { BattleBot.new("RuboCop") }.to change(BattleBot, :count).by(1)
