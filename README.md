@@ -23,10 +23,6 @@ This is expected and you are to resolve this like in the `learn_ruby` assignment
 1. Run `bundle exec rspec`
 1. If all is working properly you should see an error something like:
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9bd8dff35330bb471ef5a01d8fca50aaa828fb24
 ```bash
 LoadError: cannot load such file -- battle_bot
 ```
