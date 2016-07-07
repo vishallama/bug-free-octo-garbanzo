@@ -544,7 +544,6 @@ describe BattleBot do
 
 
   # ------------------------------------
->>>>>>> 9bd8dff35330bb471ef5a01d8fca50aaa828fb24
   # BattleBot#count
   # ------------------------------------  
 
@@ -557,13 +556,6 @@ describe BattleBot do
       bots
     end
 
-<<<<<<< HEAD
-=======
-    it 'returns the number of currently instantiated alive bots' do
-      expect(BattleBot.count).to eq(2)
-    end
-
->>>>>>> 9bd8dff35330bb471ef5a01d8fca50aaa828fb24
 
     it 'is incremented when a new bot is instantiated' do
       expect { BattleBot.new("RuboCop") }.to change(BattleBot, :count).by(1)
