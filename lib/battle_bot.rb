@@ -18,7 +18,7 @@ class BattleBot
   end
 
   def dead?
-    health <= 0
+    health == 0
   end
 
   def has_weapon?
@@ -45,8 +45,9 @@ class BattleBot
   end
 
   def defend_against(other)
-    dead?
-    has_weapon?
+    if !dead? && has_weapon?
+      attack(other)
+    end
   end
 
   def pick_up(new_weapon)
@@ -74,17 +75,19 @@ class BattleBot
     raise ArgumentError if !damage.instance_of?(Fixnum)
 
     @health = (@health - damage) < 0 ? 0 : (health - damage)
+    @@count -= 1 if health == 0
+    health
   end
 
   def heal
     if health == 0
       return
     else
-      @health = (@health + 10) > 100 ? 100 : (health + 10)
+      @health = (health + 10) > 100 ? 100 : (health + 10)
     end
   end
 
-  def count
+  def self.count
     @@count
   end
 

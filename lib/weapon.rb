@@ -14,11 +14,9 @@ class Weapon
   end
 
   def bot=(some_bot)
-    if some_bot.nil? || (some_bot.instance_of? BattleBot)
-      @bot = some_bot
-    else
-      raise_error ArgumentError
-    end
+    raise ArgumentError unless some_bot.nil? || some_bot.instance_of?(BattleBot)
+    @bot = some_bot
+    @picked_up = true
   end
 
   def picked_up?
