@@ -75,7 +75,7 @@ class BattleBot
     raise ArgumentError if !damage.instance_of?(Fixnum)
 
     @health = (@health - damage) < 0 ? 0 : (health - damage)
-    @@count -= 1 if health == 0
+    @@count -= 1 if dead?
     health
   end
 
